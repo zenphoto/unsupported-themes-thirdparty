@@ -1,6 +1,3 @@
-#Thanks for wanting to contribute!
+#Thanks for considering to contribute!
 
-Please take the time to review the [readme](https://github.com/zenphoto/Unsupported/blob/master/README.md) and our contribution and coding guidelines before doing so. Thanks!
-
-- http://www.zenphoto.org/news/general-contributor-guidelines
-- http://www.zenphoto.org/news/developer-coding-guidelines
+Although we don't actively support these, we welcome contributions via pull requests or even taking over development. Please read the contributor guidelines: http://www.zenphoto.org/news/general-contributor-guidelines#providing-themes-and-plugins
