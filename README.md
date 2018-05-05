@@ -2,7 +2,7 @@
 
 This is an archive of third party themes we store because they have been abandoned by their original developers. 
 
-Readme files or script comments will describe their use and these plugins are also listed on our site's extensions section:
+Readme files or script comments will describe their use and these themes are also listed on our site's extensions section:
 http://www.zenphoto.org/theme/
 
 Please remember that these themes are provided for your use and education but are not actively supported and maintained by the ZenphotoCMS team. Many of these themes are quite old and may not work correctly with current ZenphotoCMS versions.
