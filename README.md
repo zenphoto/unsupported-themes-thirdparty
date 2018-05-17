@@ -9,6 +9,9 @@ Please remember that these themes are provided for your use and education but ar
 
 Although we don't actively support these, we welcome contributions via pull requests or even taking over development. Please read the contributor guidelines: http://www.zenphoto.org/news/general-contributor-guidelines#providing-themes-and-plugins
 
+## Usage
+Each folder represents a theme you can install within your install's `themes` folder. Then enable the theme on the themes tab on the backend.
+
 ##License
 Most of the contents is **GPL v2 or later** licensed, e.g. those created by current or former ZenphotoCMS team members. But since there are also third party solutions collected *please see each tool for its exact licensing*.
 
