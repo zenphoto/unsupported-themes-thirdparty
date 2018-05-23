@@ -10,7 +10,7 @@
 
 class ThemeOptions {
 	
-	function ThemeOptions() {
+	function __construct() {
 		setOptionDefault('zpgal_tagline', 'Welcome to zpGalleriffic - Change this in Theme Options');
 		setOptionDefault('zpgal_homepage', gettext('none'));
 		setOptionDefault('zpgal_show_credit', false);

@@ -4,7 +4,8 @@ require_once(SERVERPATH . "/" . ZENFOLDER . "/admin-functions.php");
 require_once(dirname(__FILE__) . '/Properties.php');
 
 class ThemeOptions {
-	function ThemeOptions() {
+
+	function __construct() {
 		setOptionDefault('simplicity2_extra_text', '&copy; All rights reserved');
 		setOptionDefault('simplicity2_print_home_menu_item', true);
 		setOptionDefault('simplicity2_print_contact_menu_item', true);

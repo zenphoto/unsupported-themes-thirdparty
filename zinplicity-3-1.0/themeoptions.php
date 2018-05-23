@@ -3,7 +3,8 @@
 require_once(SERVERPATH . "/" . ZENFOLDER . "/admin-functions.php");
 
 class ThemeOptions {
-	function ThemeOptions() {
+	
+	function __construct() {
 		setOptionDefault('simplicity3_header_scroll', 'banner');
 		setOptionDefault('simplicity3_main_text', 'MAIN TEXT HEADER. SET IT IN THEME OPTION PAGE.');
 		setOptionDefault('simplicity3_search_text', 'SEARCH TEXT HEADER. SET IT IN THEME OPTION PAGE.');

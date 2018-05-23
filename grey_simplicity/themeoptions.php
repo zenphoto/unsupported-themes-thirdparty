@@ -28,7 +28,7 @@ require_once(SERVERPATH . "/" . ZENFOLDER . "/admin-functions.php");
 class ThemeOptions {
 
  
-  function ThemeOptions() {
+  function __construct() {
   	setThemeOption('thumb_size', 120, NULL, 'grey-simplicity');
   	setThemeOptionDefault('highslide', 1);
   }

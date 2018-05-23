@@ -9,7 +9,7 @@
 
 class ThemeOptions {
 	
-	function ThemeOptions() {
+	function __construct() {
 		setThemeOptionDefault('Allow_images_with_albums', true);
 		setThemeOptionDefault('google_analytics_key', '');
 		setThemeOptionDefault('piwik_adress', '');
