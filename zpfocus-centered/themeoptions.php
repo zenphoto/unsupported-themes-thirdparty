@@ -13,13 +13,13 @@ class ThemeOptions {
 
 	function __construct() {
 		// force core theme options for this theme
-		setThemeOption('albums_per_row',2,null,'zpfocus');
-		setThemeOption('images_per_row',3,null,'zpfocus');
-		setThemeOption('thumb_size',160,null,'zpfocus');
-		setThemeOption('thumb_crop',0,null,'zpfocus');
-		setThemeOption('image_size',800,null,'zpfocus'); //for sized cb target option only
-		setThemeOption('image_use_side','longest',null,'zpfocus');
-		setThemeOption('custom_index_page', '', null, 'zpfocus');
+		setThemeOption('albums_per_row',2,null,'zpfocus-centered');
+		setThemeOption('images_per_row',3,null,'zpfocus-centered');
+		setThemeOption('thumb_size',160,null,'zpfocus-centered');
+		setThemeOption('thumb_crop',0,null,'zpfocus-centered');
+		setThemeOption('image_size',800,null,'zpfocus-centered'); //for sized cb target option only
+		setThemeOption('image_use_side','longest',null,'zpfocus-centered');
+		setThemeOption('custom_index_page', '', null, 'zpfocus-centered');
 
 		// set core theme option defaults
 		setThemeOptionDefault('albums_per_page',6);

@@ -215,14 +215,8 @@ function my_checkPageValidity($request, $gallery_page, $page) {
 			$gallery_page = 'index.php'; //	same as an album gallery index
 			break;
 		case 'index.php':
-			if (extensionEnabled('zenpage')) {
-				if (getOption('zpfocus_news')) {
-					$gallery_page = 'news.php'; //	really a news page
-					break;
-				}
-				if (getOption('zpfocus_homepage')) {
-					return $page == 1; // only one page if zenpage enabled.
-				}
+			if (!extensionEnabled('zenpage')) { // only one index page if zenpage plugin is enabled or there is a custom index page
+				break;
 			}
 			break;
 		case 'news.php':
