@@ -29,7 +29,7 @@
 					$css = 'goright';
 				} ?>
 			<li class="<?php echo $css; ?>">
-				<h4><a href="<?php echo htmlspecialchars(getAlbumURL());?>" title="<?php echo gettext('View SubAlbum:'); ?> <?php echo getBareAlbumTitle();?>"><?php echo shortenContent(getBareAlbumTitle(), 20 , '...'); ?></a></h4>
+				<h4><a href="<?php echo htmlspecialchars(getAlbumURL());?>" title="<?php echo gettext('View SubAlbum:'); ?> <?php echo getBareAlbumTitle();?>"><?php echo truncate_string(getBareAlbumTitle(), 20 , '...'); ?></a></h4>
 				<a class="thumb" href="<?php echo htmlspecialchars(getAlbumURL());?>" title="<?php echo gettext('View SubAlbum:'); ?> <?php echo getBareAlbumTitle();?>">
 					<?php if (isLandscape()) {
 						printCustomAlbumThumbImage(getBareAlbumTitle(), null, 160, 120, 160, 120);
@@ -39,7 +39,7 @@
 				</a>
 				<span class="front-date"><?php printAlbumDate(); ?></span>
 				<p class="front-desc">
-					<?php echo shortenContent(getAlbumDesc(), 175 , '...'); ?>
+					<?php echo truncate_string(getAlbumDesc(), 175 , '...'); ?>
 					<a href="<?php echo htmlspecialchars(getAlbumURL());?>" title="<?php echo gettext('View SubAlbum:'); ?> <?php echo getBareAlbumTitle();?>">&raquo;</a>
 				</p>
 			</li>
@@ -89,13 +89,13 @@
 			<?php } else { ?>
 			<li class="thumb-portrait">
 				<div class="album-tools-portrait">
-						<?php if ( ($zpfocus_use_colorbox) &&  (!isImageVideo()) ) { ?><a class="album-tool" rel="zoom" href="<?php if ($zpfocus_cbtarget) { echo htmlspecialchars(getDefaultSizedImage()); } else { echo htmlspecialchars(getUnprotectedImageURL()); } ?>" title="<?php echo getBareImageTitle();?>"><img src="<?php echo $_zp_themeroot; ?>/images/search.png" alt="Zoom Image" /></a><?php } ?>
-						<?php if ( function_exists('printCommentForm') && $_zp_current_image->getCommentsAllowed() && $_zp_current_image->getCommentCount() > 0 ) { ?>
+						<?php if ($zpfocus_use_colorbox && !isImageVideo()) { ?><a class="album-tool" rel="zoom" href="<?php if ($zpfocus_cbtarget) { echo htmlspecialchars(getDefaultSizedImage()); } else { echo htmlspecialchars(getUnprotectedImageURL()); } ?>" title="<?php echo getBareImageTitle();?>"><img src="<?php echo $_zp_themeroot; ?>/images/search.png" alt="Zoom Image" /></a><?php } ?>
+						<?php if (function_exists('printCommentForm') && $_zp_current_image->getCommentsAllowed() && $_zp_current_image->getCommentCount() > 0 ) { ?>
 						<a class="album-tool" href="<?php echo htmlspecialchars(getImageURL());?>" title="<?php echo getCommentCount();?> Comments"><img src="<?php echo $_zp_themeroot; ?>/images/shout.png" alt="Comments" /></a>
 						<?php } ?>
 				</div>
 				<a class="thumb" href="<?php echo htmlspecialchars(getImageURL());?>" title="<?php echo getBareImageTitle();?>">
-					<?php printCustomSizedImage(getBareImageTitle(),null,120,160,120,160,null,null,'thumb',null,true); ?>
+					<?php printCustomSizedImage(getBareImageTitle(), null, 120, 160, 120, 160, null, null, 'thumb', null, true); ?>
 				</a>
 			<?php } ?>
 			</li>
@@ -104,15 +104,15 @@
 	</div>
 	<?php } ?>
 
-	<?php if ( (getPrevPageURL()) || (getNextPageURL()) ) {
-			printPageListWithNav('« '.gettext('Prev'), gettext('Next').' »',false,'true','page-nav','',true,'5' );
-	 }
-	 ?>
+	<?php if (getPrevPageURL() || getNextPageURL()) {
+			printPageListWithNav('« '.gettext('Prev'), gettext('Next').' »', false, 'true', 'page-nav', '', true, '5' );
+	 	}
+	?>
 
 	<?php if (function_exists('printGoogleMap')) { ?>
-			<div class="gmap">
-		<?php setOption('gmap_width',600,false); printGoogleMap(); ?>
-			</div>
+		<div class="gmap">
+			<?php setOption('gmap_width',600,false); printGoogleMap(); ?>
+		</div>
 	<?php } ?>
 	<?php printCodeblock(); ?>
 	<?php if (function_exists('printCommentForm')) printCommentForm(); ?>

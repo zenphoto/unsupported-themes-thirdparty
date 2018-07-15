@@ -33,7 +33,7 @@
 					$searchwords .= $searchdate;
 				}
 				if ($total > 0 ) {
-					printf(ngettext('%1$u Hit for <em>%2$s</em>','%1$u Hits for <em>%2$s</em>',$total), $total,  html_encode($searchwords));
+					printf(ngettext('%1$u Hit for <em>%2$s</em>', '%1$u Hits for <em>%2$s</em>', $total), $total, html_encode($searchwords));
 				} ?>
 			</p>
 
@@ -43,7 +43,7 @@
 				$number_to_show = 2;
 				$c = 0;
 				?>
-				<h4 class="blockhead"><span><?php printf(gettext('Pages (%s)'),$numpages); ?> <?php	printZDSearchShowMoreLink("pages",$number_to_show); ?></span></h4>
+				<h4 class="blockhead"><span><?php printf(gettext('Pages (%s)'), $numpages); ?> <?php printZDSearchShowMoreLink("pages", $number_to_show); ?></span></h4>
 					<ul class="zenpagesearchresults">
 					<?php
 					while (next_page()) {
@@ -51,7 +51,7 @@
 						?>
 						<li<?php printZDToggleClass('pages',$c,$number_to_show); ?>>
 						<h4><?php printPageTitlelink(); ?></h4>
-							<p class="zenpageexcerpt"><?php echo shortenContent(strip_tags(getPageContent()),250,getOption("zenpage_textshorten_indicator")); ?></p>
+							<p class="zenpageexcerpt"><?php echo shortenContent(strip_tags(getPageContent()), 250, getOption("zenpage_textshorten_indicator")); ?></p>
 						</li>
 						<?php
 					}
@@ -59,19 +59,19 @@
 					</ul>
 				<?php
 				}
-			if (($numnews > 0) && ($zpfocus_news)) {
+			if ($numnews > 0 && $zpfocus_news) {
 				$number_to_show = 2;
 				$c = 0;
 				?>
-				<h4 class="blockhead"><span><?php printf(gettext('Articles (%s)'),$numnews); ?> <?php printZDSearchShowMoreLink("news",$number_to_show); ?></span></h4>
+				<h4 class="blockhead"><span><?php printf(gettext('Articles (%s)'), $numnews); ?> <?php printZDSearchShowMoreLink("news", $number_to_show); ?></span></h4>
 					<ul class="zenpagesearchresults">
 					<?php
 					while (next_news()) {
 						$c++;
 						?>
-						<li<?php printZDToggleClass('news',$c,$number_to_show); ?>>
+						<li<?php printZDToggleClass('news', $c, $number_to_show); ?>>
 						<h4><?php printNewsURL(); ?></h4>
-							<p class="zenpageexcerpt"><?php echo shortenContent(strip_tags(getNewsContent()),250,getOption("zenpage_textshorten_indicator")); ?></p>
+							<p class="zenpageexcerpt"><?php echo shortenContent(strip_tags(getNewsContent()), 250, getOption("zenpage_textshorten_indicator")); ?></p>
 						</li>
 						<?php
 					}
@@ -93,17 +93,17 @@
 					$css = 'goright';
 					} ?>
 					<li class="<?php echo $css; ?>">
-						<h4><a href="<?php echo htmlspecialchars(getAlbumURL());?>" title="<?php echo gettext('View Album:'); ?> <?php echo getBareAlbumTitle();?>"><?php echo shortenContent(getBareAlbumTitle(),25,'...'); ?></a></h4>
+						<h4><a href="<?php echo htmlspecialchars(getAlbumURL());?>" title="<?php echo gettext('View Album:'); ?> <?php echo getBareAlbumTitle();?>"><?php echo truncate_string(getBareAlbumTitle(),25,'...'); ?></a></h4>
 						<a class="thumb" href="<?php echo htmlspecialchars(getAlbumURL());?>" title="<?php echo gettext('View Album:'); ?> <?php echo getBareAlbumTitle();?>">
 							<?php if (isLandscape()) {
-							printCustomAlbumThumbImage(getBareAlbumTitle(),null,160,120,160,120);
+							printCustomAlbumThumbImage(getBareAlbumTitle(), null, 160, 120, 160, 120);
 							} else {
-							printCustomAlbumThumbImage(getBareAlbumTitle(),null,120,160,120,160);
+							printCustomAlbumThumbImage(getBareAlbumTitle(), null, 120, 160, 120, 160);
 							} ?>
 						</a>
 						<span class="front-date"><?php printAlbumDate(); ?></span>
 						<p class="front-desc">
-							<?php echo shortenContent(getAlbumDesc(), 175 , '...'); ?>
+							<?php echo truncate_string(getAlbumDesc(), 175 , '...'); ?>
 							<a href="<?php echo htmlspecialchars(getAlbumURL());?>" title="<?php echo gettext('View album:'); ?> <?php echo getBareAlbumTitle();?>">&raquo;</a>
 						</p>
 					</li>
@@ -131,24 +131,24 @@
 					<?php if (isLandscape()) { ?>
 					<li class="thumb-landscape">
 						<div class="album-tools-landscape">
-								<?php if ( ($zpfocus_use_colorbox) &&  (!isImageVideo()) ) { ?><a class="album-tool" rel="zoom" href="<?php if ($zpfocus_cbtarget) { echo htmlspecialchars(getDefaultSizedImage()); } else { echo htmlspecialchars(getUnprotectedImageURL()); } ?>" title="<?php echo getBareImageTitle();?>"><img src="<?php echo $_zp_themeroot; ?>/images/search.png" alt="Zoom Image" /></a><?php } ?>
-								<?php if ( function_exists('printCommentForm') && $_zp_current_image->getCommentsAllowed() && $_zp_current_image->getCommentCount() > 0 ) { ?>
+								<?php if ($zpfocus_use_colorbox && !isImageVideo()) { ?><a class="album-tool" rel="zoom" href="<?php if ($zpfocus_cbtarget) { echo htmlspecialchars(getDefaultSizedImage()); } else { echo htmlspecialchars(getUnprotectedImageURL()); } ?>" title="<?php echo getBareImageTitle();?>"><img src="<?php echo $_zp_themeroot; ?>/images/search.png" alt="Zoom Image" /></a><?php } ?>
+								<?php if (getCommentCount() > 0) { ?>
 								<a class="album-tool" href="<?php echo htmlspecialchars(getImageURL());?>" title="<?php echo getCommentCount();?> Comments"><img src="<?php echo $_zp_themeroot; ?>/images/shout.png" alt="Comments" /></a>
 								<?php } ?>
 						</div>
 						<a class="thumb" href="<?php echo htmlspecialchars(getImageURL());?>" title="<?php echo getBareImageTitle();?>">
-							<?php printCustomSizedImage(getBareImageTitle(),null,160,120,160,120,null,null,'thumb',null,true); ?>
-						</a>
+							<?php printCustomSizedImage(getBareImageTitle(), null, 160, 120, 160, 120, null, null, 'thumb', null, true); ?>	
+						</a>	
 					<?php } else { ?>
 					<li class="thumb-portrait">
 						<div class="album-tools-portrait">
-								<?php if ( ($zpfocus_use_colorbox) &&  (!isImageVideo()) ) { ?><a class="album-tool" rel="zoom" href="<?php if ($zpfocus_cbtarget) { echo htmlspecialchars(getDefaultSizedImage()); } else { echo htmlspecialchars(getUnprotectedImageURL()); } ?>" title="<?php echo getBareImageTitle();?>"><img src="<?php echo $_zp_themeroot; ?>/images/search.png" alt="Zoom Image" /></a><?php } ?>
-								<?php if ( function_exists('printCommentForm') && $_zp_current_image->getCommentsAllowed() && $_zp_current_image->getCommentCount() > 0 ) { ?>
+								<?php if ($zpfocus_use_colorbox && !isImageVideo()) { ?><a class="album-tool" rel="zoom" href="<?php if ($zpfocus_cbtarget) { echo htmlspecialchars(getDefaultSizedImage()); } else { echo htmlspecialchars(getUnprotectedImageURL()); } ?>" title="<?php echo getBareImageTitle();?>"><img src="<?php echo $_zp_themeroot; ?>/images/search.png" alt="Zoom Image" /></a><?php } ?>
+								<?php if (getCommentCount() > 0) { ?>
 								<a class="album-tool" href="<?php echo htmlspecialchars(getImageURL());?>" title="<?php echo getCommentCount();?> Comments"><img src="<?php echo $_zp_themeroot; ?>/images/shout.png" alt="Comments" /></a>
 								<?php } ?>
 						</div>
 						<a class="thumb" href="<?php echo htmlspecialchars(getImageURL());?>" title="<?php echo getBareImageTitle();?>">
-							<?php printCustomSizedImage(getBareImageTitle(),null,120,160,120,160,null,null,'thumb',null,true); ?>
+							<?php printCustomSizedImage(getBareImageTitle(), null, 120, 160, 120, 160, null, null, 'thumb', null, true); ?>	
 						</a>
 					<?php } ?>
 					</li>
@@ -156,9 +156,9 @@
 				</ul>
 			</div>
 			<?php } ?>
-
-			<?php if ( (hasNextPage()) || (hasPrevPage()) ) { ?>
-			<?php printPageListWithNav('« '.gettext('Prev'), gettext('Next').' »',false,'true','page-nav','',true,'5' ); ?>
+			
+			<?php if (hasNextPage() || hasPrevPage()) { ?>
+			<?php printPageListWithNav('« '.gettext('Prev'), gettext('Next').' »', false, 'true', 'page-nav', '',true, '5' ); ?>
 			<?php } ?>
 
 			<?php if (function_exists('printGoogleMap')) { ?>
