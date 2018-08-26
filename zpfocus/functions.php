@@ -13,7 +13,7 @@ if (function_exists('printAddThis')) {
 		$zpfocus_social = false;
 }
 
-$zpfocus_tagline = getOption('zpfocus_tagline');
+$zpfocus_tagline = get_language_string(getOption('zpfocus_tagline'));
 if (is_null($zpfocus_tagline))
 		$zpfocus_tagline = 'A ZenPhoto / ZenPage Powered Theme';
 $zpfocus_allow_search = getOption('zpfocus_allow_search');
