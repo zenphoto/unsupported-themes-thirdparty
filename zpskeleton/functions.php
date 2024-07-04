@@ -163,10 +163,10 @@ function printPPSlideShowLink($linktext = '', $linkstyle = '') {
 			if (in_array($suffix, $suffixes)) {
 				$count++;
 				if (is_array($image)) {
-					$albobj = new Album($image['folder']);
-					$imgobj = newImage($albobj, $image['filename']);
+					$albobj = Albumbase::newAlbum($image['folder']);
+					$imgobj = Image::newImage($albobj, $image['filename']);
 				} else {
-					$imgobj = newImage($_zp_current_album, $image);
+					$imgobj = Image::newImage($_zp_current_album, $image);
 				}
 				if ($_zp_gallery_page == 'image.php' || in_context(ZP_SEARCH_LINKED)) {
 					if (in_context(ZP_SEARCH_LINKED)) {
