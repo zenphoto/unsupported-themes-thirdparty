@@ -1,0 +1,32 @@
+***** 1.4.6 *****
+- fix depreciated functions:
+	- CHANGE 'getAlbumLinkURL()' TO 'getAlbumURL()':
+		album.php, index.php, search.php
+	- CHANGE 'getImageLinkURL()' TO 'getImageURL()':
+		album.php, search.php
+- inc_footer.php:
+	- new social buttons, new RSS	
+- support for CMS:
+	- news.php
+	- pages.php
+- style.css
+	- new color schema: #9E8100 -> #97653F
+
+***** 1.4.5.9.1 *****
+- logobg:
+	- folder containing background baners for galery; files should have size 820x162px, format '.png';
+- album.php:
+	- update the view subcategories;
+inc_footer.php:
+	- social links (Facebook, Twitter, Google+);
+- functions.php:
+	- function to select proper logo baner;
+- inc_header.php:
+	- display selected logo;
+- themeoptions.php:
+	- new parameter "Theme_logo";
+	
+***** 1.4.5.9 *****
+initial version
+	
+	

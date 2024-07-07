@@ -1,0 +1,6 @@
+# Zenphoto theme definition file
+name::Silhouette
+author::Alex Wilson
+version::0.5
+date::2010-03-07
+desc::Horizontal scrolling albums, Javascript/jQuery-powered

@@ -1,0 +1,6 @@
+# Zenphoto theme definition file
+name::Mosaic
+author::Max Plante
+version::1.0
+date::2008-08-20
+desc::This theme presents the album as a mosaic and also supports maps for geotagged pictures.

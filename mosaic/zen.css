@@ -1,0 +1,251 @@
+/* @override http://www.digitalindustries.ca/zenphoto/themes/mosaic/zen.css */
+
+/* Fonts (GraulaubWeb */
+
+
+
+
+
+
+
+
+
+body {
+	font-family: GraublauWeb, Verdana, Arial, Sans-Serif;
+	color: white;
+	background: black url(background.png) repeat-x fixed;
+}
+
+a {
+	color: #414451;
+}
+
+#topCandy {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	font-size: 5px;
+}
+
+#topCandy #candy {
+	width: 20%;
+	float: left;
+}
+
+/* --- For the main gallery page */
+
+#galleryPage {
+	margin: 100px;
+}
+
+#galleryPage hr {
+	height: 1px;
+	background-color: #414451;
+	border-style: none;
+	margin-bottom: 50px;
+}
+
+#galleryTitle {
+	font-size: 3em;
+	font-weight: bold;
+	margin-bottom: -16px;
+}
+
+
+
+
+
+#albumPage {
+	margin: 50px;
+}
+
+#albums #album {
+	float: left;
+	width: 200px;
+	height: 500px;
+	padding: 25px;
+	overflow: hidden;
+}
+
+#albums #album img {
+	border: 0px;
+}
+
+#albums #album #albumDate {
+	font-size: 0.6em;
+	color: gray;
+}
+
+#albums #album #albumTitle {
+	margin-top: 15px;
+	font-size: 1.5em;
+	line-height: 0.9em;
+}
+
+#albums #album #albumTitle a {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#albums #album #albumDesc {
+	font-size: 0.7em;
+	margin-top: 15px;
+	color: gray;
+	line-height: 1.5em;
+	text-align: justify;
+	text-indent: 1.25em;
+}
+
+UL.pagelist {padding: 0px;margin: 5px 0px 5px;list-style-type: none;height: 2em;}
+UL.pagelist LI { display: inline; }
+UL.pagelist LI A, UL.pagelist LI span.disabledlink {display: block;float: left;padding: 2px 4px;background-color: #FFF6EC;text-decoration: none;color: #555;}
+UL.pagelist LI span.disabledlink { background-color: #000; color: #ddd; cursor: default; }
+UL.pagelist LI A:hover { background-color: #FFCC99; color: black; }
+UL.pagelist LI.current A { background-color: #FF6600; color: #FFF; cursor: default; }
+
+
+/* --- For the album page */
+
+#album {
+}
+
+#albumPage #albumNav {
+	margin-bottom: 35px;
+}
+
+#albumPage #albumNav #albumTitle {
+	font-size: 2em;
+	margin-left: 6px;
+	font-weight: bold;
+}
+
+#album #photos {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#album #photos #photo {
+	float: left;
+}
+
+#album #photos #photo img {
+	float: left;
+	border-style: none;
+}
+
+#album #photos #albumMapPanel {
+	float: left;
+}
+
+/* --- For the image page */
+
+#imagePage {
+	margin-top: 50px;
+}
+
+#imagePage #albumNav {
+	margin-bottom: 35px;
+	text-align: center;
+	font-size: 0.7em;
+}
+
+#image {
+	width: 1200px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#image #leftPane #prevButton {
+	border-top: 1px solid #414451;
+	border-bottom: 1px solid #414451;
+	padding: 20px;
+}
+
+#image #leftPane #prevButton a {
+	text-decoration: none;
+}
+
+#image #rightPane #nextButton {
+	border-top: 1px solid #414451;
+	border-bottom: 1px solid #414451;
+	text-align: right;
+	padding: 20px;
+}
+
+#image #rightPane #nextButton a {
+	text-decoration: none;
+}
+
+#leftPane #imageSideTitle {
+	font-weight: bold;
+	font-size: 1.5em;
+	text-align: right;
+	margin-right: 10px;
+	line-height: 1em;
+	margin-top: 50px;
+}
+
+#leftPane #imageTitle {
+	font-weight: bold;
+	font-size: 1.5em;
+	text-align: right;
+	margin-right: 10px;
+	line-height: 1em;
+	margin-top: 50px;
+}
+
+#image #photo img{
+	border-style: none;
+}
+
+#image #photo #imageMap {
+	margin-top: 50px;
+}
+
+#image #photo #commentForm {
+	margin-top: 50px;
+}
+
+#image #leftPane {
+	width: 250px;
+	float: left;
+}
+
+#image #rightPane {
+	width: 250px;
+	float: left;
+}
+
+#image #rightPane #description {
+	margin-top: 75px;
+	font-size: 1.25em;
+	margin-left: 15px;
+}
+
+#image #rightPane #comments {
+	margin-top: 30px;
+}
+
+#image #rightPane #comment {
+	padding: 15px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+#image #rightPane #comment #commentMeta {
+	font-size: 0.6em;
+	color: #414451;
+}
+
+#image #rightPane #comment #commentBody {
+}
+
+#image #photo {
+	width: 700px;
+	float: left;
+}
+
+
+
+
